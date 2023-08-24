@@ -12,7 +12,6 @@ mixer.init()
 paused=False
 current_song=""
 songs=[]
-directory=''
 
 def Add_Music():
     global current_song,directory

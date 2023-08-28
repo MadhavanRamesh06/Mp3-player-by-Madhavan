@@ -26,7 +26,6 @@ def Add_Music():
     Playlist.selection_set(0)
     current_song=songs[Playlist.curselection()[0]]
 
-
 def Play_Music():
     global paused,current_song,directory
     if not paused:
@@ -43,6 +42,7 @@ def pause_music():
     global paused
     mixer.music.pause()
     paused=True
+
 def next_song():
     global paused,current_song,directory
     try:
@@ -52,6 +52,7 @@ def next_song():
         Play_Music()
     except:
         pass
+
 def pre_song():
     global paused,current_song,directory
     try:
@@ -62,17 +63,14 @@ def pre_song():
     except:
         pass
     
-
 Icon_Image = PhotoImage(file="img\\logo.png")
 root.iconphoto(False,PhotoImage(file="img\\logo.png"))
 
 Top_Image =PhotoImage(file="img\\top.png")
 Label(root,image=Top_Image,bg="#0f1a2b").pack()
 
-
 logo_Image = PhotoImage(file="img\\logo.png")
 Label(root, image=logo_Image, bg="#0f1a2b").place(x=67,y=107)
-
 
 Button_Play = PhotoImage(file="img\\play.png")
 Button(root, image=Button_Play, bg="#0f1a2b", bd=0, command=Play_Music).place(x=500, y=260)
